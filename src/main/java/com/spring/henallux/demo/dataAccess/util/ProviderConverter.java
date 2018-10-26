@@ -21,7 +21,17 @@ public class ProviderConverter {
     }
 
     public UtilisateurEntity utilisateurModelToUtilisateurEntity(Utilisateur utilisateur) {
-        return mapper.map(utilisateur, UtilisateurEntity.class);
+        UtilisateurEntity utilisateurEntity = new UtilisateurEntity();
+
+        utilisateurEntity.setPassword(utilisateur.getPassword());
+        utilisateurEntity.setUsername(utilisateur.getUsername());
+        utilisateurEntity.setAccountNonExpired(true);
+        utilisateurEntity.setAccountNonLocked(true);
+        utilisateurEntity.setAuthorities("ROLE_ADMIN");
+        utilisateurEntity.setCredentialsNonExpired(true);
+        utilisateurEntity.setEnabled(true);
+
+        return utilisateurEntity;
     }
 
     public Utilisateur utilisateurEntityToUtilisateurModel(UtilisateurEntity utilisateurEntity) {

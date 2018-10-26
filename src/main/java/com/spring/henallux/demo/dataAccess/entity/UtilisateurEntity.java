@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -14,7 +15,8 @@ import java.util.List;
 import static org.springframework.util.ObjectUtils.isEmpty;
 
 
-@Entity(name="PERSISTABLE_USER")
+@Entity()
+@Table(name = "UTILISATEUR")
 public class UtilisateurEntity implements UserDetails {
 
     @Id

@@ -9,5 +9,5 @@ import javax.transaction.Transactional;
 @Repository
 @Transactional
 public interface UtilisateurRepository extends JpaRepository<UtilisateurEntity, String> {
-
+    public UtilisateurEntity findByUsername(String username);
 }
